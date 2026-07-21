@@ -261,8 +261,7 @@ pnpm dev                     # http://localhost:5173</code></pre>
   <div class="brand">TAUSIF</div>
   <h2>Add React Query &amp; Tailwind</h2>
 <pre><code data-lang="bash">pnpm add @tanstack/react-query
-pnpm add -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p      # writes tailwind.config.js + postcss.config.js</code></pre>
+pnpm add -D tailwindcss @tailwindcss/vite</code></pre>
   <ul>
     <li><b>React Query</b> owns fetching, caching, loading and error state.</li>
     <li><b>Tailwind</b> gives utility classes — no CSS files to name and maintain.</li>
@@ -274,17 +273,14 @@ npx tailwindcss init -p      # writes tailwind.config.js + postcss.config.js</co
 <section class="slide light">
   <div class="brand">TAUSIF</div>
   <h2>Wire up Tailwind</h2>
-<pre><code data-lang="js">// tailwind.config.js
-export default {
-  // Scan these files for class names so Tailwind keeps only what you use.
-  content: ['./index.html', './src/**/*.{js,jsx}'],
-  theme: { extend: {} },
-  plugins: [],
-}</code></pre>
+<pre><code data-lang="js">// vite.config.js
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+})</code></pre>
 <pre><code data-lang="css">/* src/index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;</code></pre>
+@import "tailwindcss";</code></pre>
   <div class="pnum">11</div>
 </section>
 
@@ -302,7 +298,7 @@ export default {
     WeatherCard.jsx
   App.jsx              # state + which branch to render
   main.jsx             # QueryClientProvider mounts here
-  index.css            # Tailwind directives
+  index.css            # Tailwind import
 .env                   # API key (never commit!)
 .gitignore</code></pre>
   <div class="note">Three layers: <b>api/</b> talks HTTP, <b>hooks/</b> handles caching, <b>components/</b> only render.</div>

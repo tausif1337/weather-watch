@@ -1,4 +1,1 @@
-/* Tailwind injects its base, component, and utility styles here. */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
