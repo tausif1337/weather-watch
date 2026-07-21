@@ -245,13 +245,13 @@
 <section class="slide light">
   <div class="brand">TAUSIF</div>
   <h2>Scaffold with Vite</h2>
-<pre><code data-lang="bash">pnpm create vite weather-watch --template react
+<pre><code data-lang="bash">npm create vite@latest weather-watch -- --template react
 cd weather-watch
-pnpm install
-pnpm dev                     # http://localhost:5173</code></pre>
+npm install
+npm run dev                  # http://localhost:5173</code></pre>
   <ul>
     <li>Vite gives an instant dev server + fast HMR.</li>
-    <li><code class="c">npm</code> or <code class="c">yarn</code> work the same — swap the command.</li>
+    <li><code class="c">pnpm</code> or <code class="c">yarn</code> work the same — swap the command.</li>
   </ul>
   <div class="pnum">9</div>
 </section>
@@ -260,8 +260,8 @@ pnpm dev                     # http://localhost:5173</code></pre>
 <section class="slide light">
   <div class="brand">TAUSIF</div>
   <h2>Add React Query &amp; Tailwind</h2>
-<pre><code data-lang="bash">pnpm add @tanstack/react-query
-pnpm add -D tailwindcss @tailwindcss/vite</code></pre>
+<pre><code data-lang="bash">npm install tailwindcss @tailwindcss/vite
+npm install @tanstack/react-query</code></pre>
   <ul>
     <li><b>React Query</b> owns fetching, caching, loading and error state.</li>
     <li><b>Tailwind</b> gives utility classes — no CSS files to name and maintain.</li>
@@ -694,8 +694,8 @@ export function useForecast(city) {
 <section class="slide light">
   <div class="brand">TAUSIF</div>
   <h2>Build &amp; deploy</h2>
-<pre><code data-lang="bash">pnpm build      # outputs dist/
-pnpm preview    # test the production build locally</code></pre>
+<pre><code data-lang="bash">npm run build      # outputs dist/
+npm run preview    # test the production build locally</code></pre>
   <ul>
     <li><b>Vercel / Netlify</b>: connect the repo, framework auto-detected as Vite.</li>
     <li>Add <code class="c">VITE_WEATHER_API_KEY</code> in the host's <b>Environment Variables</b> dashboard — it isn't in your repo.</li>
