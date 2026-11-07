@@ -19,12 +19,14 @@ export default function App() {
     setWeather(null)
 
     try {
+      // API docs: https://openweathermap.org/current
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
       const response = await fetch(url)
       const data = await response.json()
 
       if (response.ok) {
         setWeather(data)
+        console.log(data) // for debugging
       } else {
         setError(data.message) // e.g. "city not found"
       }
